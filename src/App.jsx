@@ -1,10 +1,11 @@
-function App() {
-  const [count, setCount] = useState(0)
+import Header from './components/Header';
 
+function App() {
+  
   return (
-    <>
-      hello world
-    </>
+    <div className="bg-pink-50">
+      <Header />
+    </div>
   )
 }
 
