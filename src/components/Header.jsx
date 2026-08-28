@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header className="w-full h-screen flex flex-col gap-2 justify-center items-center">
+    <header className="w-full flex flex-col gap-2 justify-center items-center">
       <h1 className="text-4xl md:text-6xl font-bold text-pink-500 mb-3">Persona Quiz</h1>
       <h2 className="text-2xl md:text-4xl font-semibold">Which Element Are You?</h2>
 
