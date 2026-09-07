@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import useNavigate from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { UserContext } from './UserContext';
 
 const UserForm = () => {
@@ -9,7 +9,7 @@ const UserForm = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setName(inputName);  // Set the name in context
+    setName(inputName.trim());  // Set the name in context
     setInputName('');  // Clear the input field
 
     navigate('/quiz'); // Change the URL without reloading the page
@@ -30,7 +30,13 @@ const UserForm = () => {
         />
       </label>
       
-      <button type="submit" className="border border-pink-500 px-4 py-2 mt-3 bg-pink-100 hover:bg-pink-200 shadow rounded-full cursor-pointer">Start Quiz</button>
+      <button
+        type="submit"
+        className="border border-pink-500 px-4 py-2 mt-3 bg-pink-100
+          hover:bg-pink-200 shadow rounded-full cursor-pointer"
+      >
+        Start Quiz
+      </button>
     </form>
   )
 }

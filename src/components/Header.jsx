@@ -1,7 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from './UserContext';
 
 const Header = () => {
+  const { name } = useContext(UserContext);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (!name) {
+      alert('Please enter your name before starting the quiz.');
+    } else {
+      window.location.href = '/quiz';
+    }
+  }
+
   return (
     <header className="w-full flex flex-col gap-2 justify-center items-center">
       <h1 className="text-4xl md:text-6xl font-bold text-pink-500 mb-3">Persona Quiz</h1>
@@ -16,7 +29,7 @@ const Header = () => {
           </li>
 
           <li className="hover:text-pink-500 transition-colors duration-110">
-            <Link to="/quiz">Quiz</Link>
+            <Link to="/quiz" onClick={handleClick}>Quiz</Link>
           </li>
         </ul>
       </nav>
